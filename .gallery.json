@@ -1,0 +1,22 @@
+{
+  "banner": {
+    "colorA": "#7FF255",
+    "colorB": "#202D80",
+    "label": "Maturitný projekt ",
+    "mode": "generated",
+    "seed": 0,
+    "style": 0,
+    "text": "custom"
+  },
+  "description": "Tento maturitný projekt je zameraný na vytvorenie automatizovaných terčov, do ktorých sa bude strieľať zo strelnej zbrane. Terče budú ovládané pomocou aplikácie, ktorá bude takisto zaznamenávať úspešnosť zásahov, presnosť, rýchlosť atď. ",
+  "features": [],
+  "name": "maturitny_projekt-strelba-terce",
+  "screenshots": [],
+  "shortDesc": "Streľba na automatizované terče",
+  "status": "wip",
+  "tags": [
+    "maturita",
+    "škola"
+  ],
+  "url": "https://github.com/matejsedik/maturitny_projekt-strelba-terce.git"
+}
