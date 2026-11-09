@@ -2,7 +2,7 @@
 
 Program pre ESP32 v terčovej jednotke (na konštrukcii s terčmi).
 
-**Úlohy programu:** čítať hallove senzory zásahu (10 terčov), ovládať servá (stavanie radov), ovládať motor krycieho plátu a koncové spínače, posielať správy základni cez ESP-NOW. Popis je v dokumente 02_TECHNICKE_RIESENIE, kapitola 4.1.
+**Úlohy programu:** čítať hallove senzory zásahu (10 terčov), ovládať servá (stavanie radov), ovládať motor krycieho plátu a koncové spínače, posielať správy do mobilu a prijímať príkazy cez Bluetooth LE. Popis je v dokumente 02_TECHNICKE_RIESENIE, kapitola 4.1.
 
 **Súbory**
 - `firmver-terc.ino` – hlavný súbor (zatiaľ len kostra, nie je odskúšaná).

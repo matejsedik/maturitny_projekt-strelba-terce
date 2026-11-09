@@ -7,4 +7,4 @@
 - `cast-nazov_vN.stl` – export na 3D tlač,
 - N je číslo verzie, staršie verzie sa nemažú, kým sa nepotvrdí, že nová funguje.
 
-Rozmery sú v dokumente 02_TECHNICKE_RIESENIE, kapitola 2, a v `03_Navrh/konstrukcia_nakres.pdf` (opravený nákres: technický pohľad spredu a zboku + 3D ilustrácia; pôvodný obrázok je v `07_Prilohy_a_odkazy/konstrukcia-nakres.png`).
+Rozmery sú v dokumente 02_TECHNICKE_RIESENIE, kapitola 2, a v `07_Prilohy_a_odkazy/konstrukcia_nakres.pdf` (opravený nákres: technický pohľad spredu a zboku + 3D ilustrácia; pôvodný obrázok je v `07_Prilohy_a_odkazy/konstrukcia-nakres.png`).
