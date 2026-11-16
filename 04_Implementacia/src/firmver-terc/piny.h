@@ -10,9 +10,9 @@
 
 constexpr uint8_t PIN_NEPRIDELENY = 255;
 
-// Hallove senzory zásahu (vstup s INPUT_PULLUP)
-constexpr uint8_t PIN_HALL_LAH[5]  = {PIN_NEPRIDELENY, PIN_NEPRIDELENY, PIN_NEPRIDELENY, PIN_NEPRIDELENY, PIN_NEPRIDELENY};
-constexpr uint8_t PIN_HALL_STOJ[5] = {PIN_NEPRIDELENY, PIN_NEPRIDELENY, PIN_NEPRIDELENY, PIN_NEPRIDELENY, PIN_NEPRIDELENY};
+// Optické vidlicové snímače zásahu TCST2103 (výstup fototranzistora, vstup s INPUT_PULLUP)
+constexpr uint8_t PIN_ZASAH_LAH[5]  = {PIN_NEPRIDELENY, PIN_NEPRIDELENY, PIN_NEPRIDELENY, PIN_NEPRIDELENY, PIN_NEPRIDELENY};
+constexpr uint8_t PIN_ZASAH_STOJ[5] = {PIN_NEPRIDELENY, PIN_NEPRIDELENY, PIN_NEPRIDELENY, PIN_NEPRIDELENY, PIN_NEPRIDELENY};
 
 // Servá na stavanie radov
 constexpr uint8_t PIN_SERVO_LAH  = PIN_NEPRIDELENY;
@@ -23,7 +23,7 @@ constexpr uint8_t PIN_MOTOR_IN1     = PIN_NEPRIDELENY;
 constexpr uint8_t PIN_MOTOR_IN2     = PIN_NEPRIDELENY;
 constexpr uint8_t PIN_MOTOR_REZERVA = PIN_NEPRIDELENY;  // TB6612FNG: STBY/PWMA, pri DRV8833 voľný
 
-// Koncové spínače plátu (piny 34–39 nemajú vnútorný pull-up -> vonkajší odpor 10 kΩ)
+// Optické koncové snímače plátu TCST2103 (piny 34–39 nemajú vnútorný pull-up -> vonkajší odpor 10 kΩ)
 constexpr uint8_t PIN_KONCAK_HORE = PIN_NEPRIDELENY;
 constexpr uint8_t PIN_KONCAK_DOLE = PIN_NEPRIDELENY;
 
