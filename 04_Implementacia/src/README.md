@@ -3,7 +3,7 @@
 | Priečinok | Čo obsahuje | Kto |
 |---|---|---|
 | `firmver-terc/` | program pre ESP32 v terčovej jednotke (snímanie zásahu, servá, krycí plát, Bluetooth LE do mobilu) | Matej |
-| `firmver-stlp/` | program pre ESP32 v stĺpovej jednotke pri strelcovi (dva mikrofóny INMP441, detekcia výstrelu, Bluetooth LE do mobilu). Návrh učiteľa, ešte treba potvrdiť s Ing. Hollým, zatiaľ len popis | Matej |
+| `firmver-stlp/` | program pre ESP32 v stĺpovej jednotke pri strelcovi (dva mikrofóny INMP441, detekcia výstrelu, Bluetooth LE do mobilu). Návrh Ing. Hollého, overí sa testom vo Fáze 1, zatiaľ len popis | Matej |
 | `aplikacia-android/` | mobilná aplikácia (Android Studio, Kotlin, Jetpack Compose), prijíma údaje o výstreloch zo stĺpovej jednotky (druhé spojenie Bluetooth LE) | Matej |
 | `mechanika-3d/` | 3D modely a podklady na výrobu konštrukcie | Sára |
 | `elektronika/` | benchmarking, schémy, kusovníky, technické listy a parametre elektrotechnických súčiastok | Sára |

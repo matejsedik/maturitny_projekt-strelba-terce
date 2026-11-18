@@ -1,6 +1,6 @@
 # firmver-stlp
 
-Program pre ESP32 v stĺpovej jednotke (kovový stĺp vedľa strelca, 10 m od terčov). Je to **návrh učiteľa, ktorý ešte treba potvrdiť s Ing. Hollým a overiť testom vo Fáze 1.**
+Program pre ESP32 v stĺpovej jednotke (kovový stĺp vedľa strelca, 10 m od terčov). Je to **návrh Ing. Hollého, ktorý sa overí testom vo Fáze 1.**
 
 **Úlohy programu (návrh):** čítať dva digitálne mikrofóny INMP441 cez jednu zbernicu I2S (horný pre stoj vo výške 1100 mm, dolný pre ľah vo výške 300 mm), rozpoznať výstrel podľa hlasitosti nad prahom, po výstrele chvíľu ignorovať ďalší zvuk (mŕtvy čas asi 300 ms), merať čas medzi výstrelmi a poslať správu o výstrele do mobilu cez Bluetooth LE (druhé spojenie, prvé je s terčom). Prah citlivosti sa nastavuje z aplikácie.
 

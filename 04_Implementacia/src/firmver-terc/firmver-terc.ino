@@ -15,8 +15,8 @@ void setup() {
   for (uint8_t pin : PIN_ZASAH_LAH)  nastavPin(pin, INPUT_PULLUP);
   for (uint8_t pin : PIN_ZASAH_STOJ) nastavPin(pin, INPUT_PULLUP);
 
-  nastavPin(PIN_KONCAK_HORE, INPUT);  // vonkajší pull-up 10 kΩ, ak ide o pin 34–39
-  nastavPin(PIN_KONCAK_DOLE, INPUT);
+  nastavPin(PIN_KONCAK_HORE, INPUT_PULLUP);  // len piny s vnútorným pull-upom (nie 34–39)
+  nastavPin(PIN_KONCAK_DOLE, INPUT_PULLUP);
 
   nastavPin(PIN_LED, OUTPUT);
 }

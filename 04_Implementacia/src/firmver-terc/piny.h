@@ -10,7 +10,8 @@
 
 constexpr uint8_t PIN_NEPRIDELENY = 255;
 
-// Optické vidlicové snímače zásahu TCST2103 (výstup fototranzistora, vstup s INPUT_PULLUP)
+// Optické vidlicové snímače zásahu LTH-301-05 (výstup fototranzistora, vstup s INPUT_PULLUP).
+// Len piny s vnútorným pull-upom (nie GPIO34–39), vonkajší odpor netreba.
 constexpr uint8_t PIN_ZASAH_LAH[5]  = {PIN_NEPRIDELENY, PIN_NEPRIDELENY, PIN_NEPRIDELENY, PIN_NEPRIDELENY, PIN_NEPRIDELENY};
 constexpr uint8_t PIN_ZASAH_STOJ[5] = {PIN_NEPRIDELENY, PIN_NEPRIDELENY, PIN_NEPRIDELENY, PIN_NEPRIDELENY, PIN_NEPRIDELENY};
 
@@ -18,12 +19,11 @@ constexpr uint8_t PIN_ZASAH_STOJ[5] = {PIN_NEPRIDELENY, PIN_NEPRIDELENY, PIN_NEP
 constexpr uint8_t PIN_SERVO_LAH  = PIN_NEPRIDELENY;
 constexpr uint8_t PIN_SERVO_STOJ = PIN_NEPRIDELENY;
 
-// Motor krycieho plátu (driver motora)
+// Motor krycieho plátu (driver TB6612FNG; STBY a PWMA sú natrvalo na 3,3 V)
 constexpr uint8_t PIN_MOTOR_IN1     = PIN_NEPRIDELENY;
 constexpr uint8_t PIN_MOTOR_IN2     = PIN_NEPRIDELENY;
-constexpr uint8_t PIN_MOTOR_REZERVA = PIN_NEPRIDELENY;  // TB6612FNG: STBY/PWMA, pri DRV8833 voľný
 
-// Optické koncové snímače plátu TCST2103 (piny 34–39 nemajú vnútorný pull-up -> vonkajší odpor 10 kΩ)
+// Optické koncové snímače plátu LTH-301-05 (vstup s INPUT_PULLUP, len piny s vnútorným pull-upom, nie GPIO34–39)
 constexpr uint8_t PIN_KONCAK_HORE = PIN_NEPRIDELENY;
 constexpr uint8_t PIN_KONCAK_DOLE = PIN_NEPRIDELENY;
 

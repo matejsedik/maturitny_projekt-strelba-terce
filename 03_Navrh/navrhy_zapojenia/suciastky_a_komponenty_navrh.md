@@ -1,15 +1,16 @@
 # Súčiastky a komponenty: návrh nákupného prehľadu
 
-Stav z 18. 11. 2026. Je to **návrh na diskusiu**, nie objednávka. Nič z toho nie je zatiaľ kúpené.
+Stav z 19. 11. 2026. Je to **návrh na diskusiu**, nie objednávka. Zakúpené sú zatiaľ len optické vidlicové snímače LTH-301-05 (15 ks, TME). Zvyšok ešte nie je kúpený.
 
 ## Ako to čítať
 
 - Počty kusov sú z dokumentu Komponenty (prototyp, vrátane rezervy).
 - **Ceny tu zámerne nie sú.** Pri nákupe ich treba pozrieť priamo v obchode.
+- **ZAKÚPENÉ** označuje položky, ktoré už máme. Cena zakúpených snímačov je v Google tabuľke 05_KOMPONENTY_A_ROZPOCET (hárok Elektronika).
 - Odkazy som našiel vyhľadávaním. Pred objednávkou treba skontrolovať, či je tovar skladom a či súčiastka sedí s popisom (označené „overiť“).
 - „nenájdené“ znamená, že konkrétny odkaz som nenašiel. Tam je len typ súčiastky alebo kategória.
 - Obchody: [Techfun](https://techfun.sk) a [rlx.sk](https://rlx.sk) (SK), [LaskaKit](https://www.laskakit.cz/en/), [GM electronic](https://www.gme.cz) a [Hadex](https://www.hadex.cz) (CZ).
-- Veci, ktoré ešte nie sú rozhodnuté (verzia ESP32, pohon plátu), sú vedené ako alternatívy. Snímač zvuku je navrhnutý (INMP441 na stĺpe pri strelcovi, bod 2), ale návrh učiteľa ešte treba potvrdiť s Ing. Hollým a overiť testom vo Fáze 1.
+- Veci, ktoré ešte nie sú rozhodnuté (verzia ESP32, pohon plátu), sú vedené ako alternatívy. Snímač zvuku je navrhnutý (INMP441 na stĺpe pri strelcovi, bod 2, návrh Ing. Hollého) a overí sa testom vo Fáze 1.
 
 ---
 
@@ -32,9 +33,10 @@ Obe alternatívy sa programujú rovnako (rovnaké piny a rovnaký kód). Rozdiel
 
 | Súčiastka | Ks | Čo robí a na čo bude | Kde kúpiť |
 |---|---|---|---|
-| Optický vidlicový snímač **TCST2103** (zásah) | 12 (10 + 2 rezerva) | Vidlica s IR LED a fototranzistorom, štrbina 3,1 mm. Stojí v mieste, kam dopadne hlavička doštičky. Hlavička v štrbine preruší lúč a to je zásah. | [Optická závora TCST2103 (Techfun)](https://techfun.sk/produkt/opticka-zavora-tcst2103/), alternatívy: [GM electronic](https://gme.cz/tcst2103), [TME](https://www.tme.eu/en/details/tcst2103/pcb-photoelectric-sensors/vishay/) |
-| Optický vidlicový snímač **TCST2103** (koncové polohy plátu) | 4 | Rovnaký typ. Označuje hornú a dolnú polohu krycieho plátu, keď výčnelok plátu preruší lúč, motor sa zastaví. | rovnaký odkaz ako vyššie |
-| **Mikrofón INMP441** (I2S modul, snímač zvuku výstrelu) | 3 (2 + 1 rezerva) | Digitálny MEMS mikrofón s rozhraním I2S, napájanie 3,3 V. Dva kusy sú na stĺpe pri strelcovi (300 mm pre ľah, 1100 mm pre stoj) a dostanú sa na jednu I2S zbernicu stĺpovej ESP32. Zachytí výstrel, prvý výstrel spustí časovač a piaty ho zastaví. Zvukový otvor je dierka v doske, nesmie sa zakryť. Overiť, či sú k modulu priložené piny (inak treba doletovať). Umiestnenie je návrh učiteľa, ešte treba potvrdiť s Ing. Hollým. | [INMP441 modul I2S mikrofónu (LaskaKit)](https://www.laskakit.cz/en/inmp441-modul-i2s-mikrofonu/) |
+| Optický vidlicový snímač **LTH-301-05** (Lite-On; zásah) – **ZAKÚPENÉ** | 10 (z 15 zakúpených kusov) | Vidlica s IR LED a fototranzistorom (4 drôtové vývody), štrbina 6 mm, otvor lúča 0,9 mm. Stojí v mieste, kam dopadne hlavička doštičky. Hlavička v štrbine preruší lúč a to je zásah. Poradie vývodov a rozmery puzdra overiť v datasheete výrobcu (zatiaľ nepotvrdené). | [LTH-301-05 (TME)](https://www.tme.eu/sk/details/lth-301-05/fotoelektricke-snimace-pre-plosne-spoje/liteon/), už kúpené |
+| Optický vidlicový snímač **LTH-301-05** (koncové polohy plátu) – **ZAKÚPENÉ** | 2 (z 15 zakúpených kusov) | Rovnaký typ. Označuje hornú a dolnú polohu krycieho plátu, keď výčnelok plátu preruší lúč, motor sa zastaví. | rovnaký odkaz ako vyššie |
+| Optický vidlicový snímač **LTH-301-05** (rezerva) – **ZAKÚPENÉ** | 3 (z 15 zakúpených kusov) | Rezerva na poškodenie pri skúšaní. Spolu 10 + 2 + 3 = 15 ks. | rovnaký odkaz ako vyššie |
+| **Mikrofón INMP441** (I2S modul, snímač zvuku výstrelu) | 3 (2 + 1 rezerva) | Digitálny MEMS mikrofón s rozhraním I2S, napájanie 3,3 V. Dva kusy sú na stĺpe pri strelcovi (300 mm pre ľah, 1100 mm pre stoj) a dostanú sa na jednu I2S zbernicu stĺpovej ESP32. Zachytí výstrel, prvý výstrel spustí časovač a piaty ho zastaví. Zvukový otvor je dierka v doske, nesmie sa zakryť. Overiť, či sú k modulu priložené piny (inak treba doletovať). Umiestnenie navrhol Ing. Hollý, overí sa testom vo Fáze 1. | [INMP441 modul I2S mikrofónu (LaskaKit)](https://www.laskakit.cz/en/inmp441-modul-i2s-mikrofonu/) |
 | **Tienený kábel a vodiče k mikrofónom** | asi 2 × 0,4 m + rezerva | Krátke spojenie krabičky s ESP32 s oboma mikrofónmi (SCK, WS, SD, 3V3, GND). Dĺžku a tienenie overiť testom vo Fáze 1. | nenájdené |
 | **Penový kryt (windscreen) na mikrofón** | 2 až 3 | Tlmí vietor a údery tlakovej vlny na mikrofóne. Nesmie zakryť zvukový otvor. | nenájdené |
 
@@ -58,7 +60,7 @@ Poznámka: či INMP441 zvládne hlasitosť výstrelu zo vzduchovky a či sa výs
 |---|---|---|---|
 | **Servo MG996R** | 3 (2 + rezerva) | Natočí sa na presný uhol. Jedno servo na rad otáča zdvíhaciu lištu, ktorá postaví spadnuté doštičky. Má kovové prevody. | [Techfun](https://techfun.sk/produkt/servo-motorcek-mg996r/), [rlx.sk](https://rlx.sk/en/servo-motor/7278-mg996r-servo-motor-metal-gear-high-torque-ws-15299.html) |
 | **Motorček s prevodovkou** 6–12 V | 1 | Poháňa reťaz krycieho plátu. Prevodovka znižuje otáčky a zvyšuje silu. Presný typ nie je vybraný, napájanie je 6,0–8,4 V z batérie, takže treba verziu na toto napätie (overiť). Príklad: JGA25-370. | [Motor JGA25-370 12 V s prevodovkou (LaskaKit)](https://www.laskakit.cz/en/motor-jga25-370-12v-s-prevodovkou-/), ďalšie motory: [Hadex](https://www.hadex.cz/c/motorky-s-prevodovkou-1), [LaskaKit](https://www.laskakit.cz/en/motors/) |
-| **Driver motora TB6612FNG** (alebo DRV8833) | 2 (1 + rezerva) | ESP32 nevie poháňať motor priamo. Driver spína väčší prúd a dovolí točiť motorom oboma smermi. TB6612FNG zvláda do 13,5 V, DRV8833 do asi 10 V. | [Techfun](https://techfun.sk/produkt/motor-driver-tb6612fng/), [rlx.sk](https://rlx.sk/en/motor-driver/3017-tb6612fng-dual-motor-driver-carrier-pololu-713.html). DRV8833: nenájdené |
+| **Driver motora TB6612FNG** | 2 (1 + rezerva) | ESP32 nevie poháňať motor priamo. Driver spína väčší prúd a dovolí točiť motorom oboma smermi. Zvláda do 13,5 V. Vstupy STBY a PWMA sú natrvalo na 3,3 V, takže z ESP32 idú len 2 riadiace vodiče. | [Techfun](https://techfun.sk/produkt/motor-driver-tb6612fng/), [rlx.sk](https://rlx.sk/en/motor-driver/3017-tb6612fng-dual-motor-driver-carrier-pololu-713.html) |
 | **Reťaz a reťazové kolesá** | asi 20 článkov, 2 kolesá (typ overiť) | Reťaz vedľa pravej prednej nohy zdvíha a spúšťa krycí plát. Typ a rozstup sa vyberie podľa motora. | nenájdené, len kategória: [valčekové reťaze (RS Components)](https://cz.rs-online.com/web/c/prenos-mechanickeho-vykonu/valeckove-retezy-a-prislusenstvi/valeckove-retezy/) |
 | **Ozubený remeň GT2 + krokový motor** (alternatíva k reťazi, rozhodnutie vo Fáze 2) | podľa návrhu | Presnejšie než reťaz, ale drahšie a zložitejšie. | nenájdené |
 | **Vodiace lišty** pre krycí plát | 2 | Plát sa v nich posúva zvisle. Typ nie je vybraný (možno hliníkový U-profil alebo 3D tlač). | nenájdené |
@@ -71,7 +73,7 @@ Poznámka: či INMP441 zvládne hlasitosť výstrelu zo vzduchovky a či sa výs
 |---|---|---|---|
 | **Li-ion článok 18650** | 2 (v sérii) | Batéria terčovej jednotky (2S, 7,4 V). Kupovať len od overeného predajcu s uvedenou kapacitou. | nenájdené |
 | **Držiak na 2 články 18650** | 1 | Drží oba články a vyvádza vodiče. | [Techfun](https://techfun.sk/produkt/drziak-pre-dve-18650-li-ion-baterie/), [LaskaKit](https://www.laskakit.cz/en/bateriovy-box-2x18650-dratove-vyvody/) |
-| **Nabíjací modul 2S s USB-C** (napr. IP2326) | 2 (1 + rezerva) | Nabije dva články v sérii z USB-C nabíjačky. Treba overiť, či sa dá nabíjať aj z bežnej nabíjačky mobilu. | [LaskaKit PD-IP2326 2–3S 1,5 A](https://www.laskakit.cz/en/la123029/) |
+| **Nabíjací modul 2S s USB-C** (napr. IP2326) | 2 (1 + rezerva) | Nabije dva články v sérii z bežnej USB-C nabíjačky od mobilu (5 V, modul si napätie zvýši na 8,4 V). Nabíja sa pri vypnutom terči. | [LaskaKit PD-IP2326 2–3S 1,5 A](https://www.laskakit.cz/en/la123029/) |
 | **BMS 2S s vyrovnávaním** | 2 (1 + rezerva) | Chráni články pred prebitím, hlbokým vybitím a skratom a vyrovnáva napätie. | [LaskaKit: ochrana a balancér 2S 20 A](https://www.laskakit.cz/en/ochrana-li-ion-baterie-2s-20a/) |
 | **Menič step-down A (6 V, ≥ 3 A)** | 2 | Napája servá. Musí zvládnuť aspoň 3 A. | [XL4015 5 A (LaskaKit)](https://www.laskakit.cz/en/step-down-menic-s-xl4015/), [XL4015 (GM electronic)](https://www.gme.cz/v/1507885/modul-dc-dc-menic-step-down-125-30v-5a-xl4015), [XL4015 (Hadex)](https://www.hadex.cz/p/m408-napajeci-modul-step-down-menic-5a-s-xl4015) |
 | **Menič step-down B (5 V)** | 2 | Napája ESP32 a optické snímače. | [LM2596 (LaskaKit)](https://www.laskakit.cz/en/step-down-menic-s-lm2596/) alebo rovnaký XL4015 ako vyššie |
@@ -88,10 +90,10 @@ Poznámka: či INMP441 zvládne hlasitosť výstrelu zo vzduchovky a či sa výs
 |---|---|---|---|
 | **Nepájivé pole 830 bodov** | 1 | Rýchle zapojenie bez spájkovania na skúšanie vo Fáze 1. | [Techfun](https://techfun.sk/produkt/nepajive-kontaktne-pole-830-bodov-transparentne/), [LaskaKit](https://www.laskakit.cz/en/nepajive-kontaktni-pole-830-pinu--bile/) |
 | **Prepojovacie káble (dupont)** | sada | Prepájanie na nepájivom poli. | [Techfun 10 cm](https://techfun.sk/produkt/kabliky-40-kusov-10-cm/), [20 cm](https://techfun.sk/produkt/kabliky-40-kusov-20-cm/), [30 cm](https://techfun.sk/produkt/kabliky-40-kusov-30-cm/) |
-| **Dierkovaná doska** | podľa návrhu | Trvalé zapojenie prototypu od Fázy 2, lebo nepájivé pole sa pri otrasoch uvoľňuje. | nenájdené |
+| **Dierkovaná doska** | podľa návrhu | Trvalé zapojenie prototypu od Fázy 2, lebo nepájivé pole sa pri otrasoch uvoľňuje. Okrem hlavnej dosky v krabičke aj 2 malé doštičky radov (5 odporov 220 Ω a konektor JST pre každý rad), pri samotných snímačoch žiadna doštička. | nenájdené |
 | **Konektory JST (XH)** | sada | Rýchle a pevné odpojenie senzorov, serv a batérie. Jeden kábel na rad snímačov (7 vodičov). | [LaskaKit sada JST-XH 80 ks](https://www.laskakit.cz/en/laskakit-sada-jst-xh-konektoru-80ks/), [Hadex konektory](https://www.hadex.cz/c/kabelova-konfekce) |
-| **Odpory** (10 kΩ, 100 kΩ, 33 kΩ, predradné pre LED snímačov) | sada | Pull-up pre snímače, delič na meranie batérie, predradný odpor LED (hodnotu určí datasheet, overiť). | [Resistor/LED/capacitor kit (Techfun)](https://techfun.sk/produkt/resistorledcapacitor-kit-plastovy-organizer/), [Hadex sady rezistorov](https://www.hadex.cz/c/sady-rezistoru) |
-| **Kondenzátory** (100 nF, väčší elektrolyt pri servách) | sada | Vyhladzujú napätie pri servách, aby ESP32 nevypadávalo. | rovnaký kit, elektrolyt väčší: nenájdené |
+| **Odpory** (220 Ω, 100 kΩ, 33 kΩ) | sada | Predradné odpory LED snímačov LTH-301-05 (začiatočná hodnota ≈ 220 Ω, overiť na stole podľa datasheetu; aspoň 12 ks + rezerva: 10 ks na dvoch doštičkách radov pri konektoroch JST, 2 ks v krabičke pre koncové snímače) a delič na meranie batérie (100 kΩ a 33 kΩ). Pull-up odpory pre snímače netreba, stačí vnútorný pull-up ESP32. | [Resistor/LED/capacitor kit (Techfun)](https://techfun.sk/produkt/resistorledcapacitor-kit-plastovy-organizer/), [Hadex sady rezistorov](https://www.hadex.cz/c/sady-rezistoru) |
+| **Kondenzátory** (100 nF, 100 µF, 1000 µF) | sada | 1000 µF pri servách (aby ESP32 nevypadávalo), 100 µF pri vstupe VM drivera, 100 nF na svorkách motora a pri mikrofónoch. | rovnaký kit, elektrolyt väčší: nenájdené |
 | **LED** | pár ks | Skúšobný výstup a signalizácia na terči. | v kite vyššie |
 | **Kábel USB a kábel do servo/motora, silnejšie vodiče** | podľa návrhu | Programovanie a napájanie. | nenájdené |
 
@@ -105,7 +107,7 @@ Poznámka: či INMP441 zvládne hlasitosť výstrelu zo vzduchovky a či sa výs
 | **Plastové spojky 253/KJ** (trojcestný roh) | 4 ks, hore v rohoch rámu | rovnaká stránka Aluhobby (typy 251/KJ a 252/KJ sú tiež tam) |
 | **Hliníkový profil HJ25TK2: stĺp pre snímače zvuku** | asi 1,3 m navyše (dĺžku overiť), narezať na mieru spolu s ostatným | [Aluhobby: HJ25TK2](https://www.aluhobby.sk/hlinikovy-profil--hj25tk2-elox/). Na stĺp pridať podstavu (typ a stabilita sa overia skúškou). |
 | **Oceľový plech 2–3 mm** | panely s otvormi, sklápacie doštičky, štít pre elektroniku | nenájdené (objednať narezaný presne na mieru, firmu treba vybrať) |
-| **Plech alebo preglejka pre krycí plát** | krycí plát 456 × 140 mm (v prototype preglejka, finálne plech) | nenájdené |
+| **Plech alebo hliník pre krycí plát** | krycí plát 456 × 140 mm (materiál sa upresní podľa ponuky na mieru, nepotvrdené; drevo sa nepoužije) | nenájdené |
 | **Filament PETG a PLA** | 3D tlač: držiaky, lišty, krabička, stĺpiky pre snímače, držiaky mikrofónov a krabička na stĺpe | napr. [Prusament PETG 1,75 mm (Alza)](https://www.alza.cz/prusament-petg-1-75mm-urban-grey-1kg-d5714261.htm) |
 | **Gumené tlmiče (silentbloky)** | krabička s elektronikou visí na oceľovom štíte | nenájdené, len kategória: [silentbloky (Essentra)](https://www.essentracomponents.com/sk-sk/s/silentbloky-a-dorazy) |
 | **Skrutky, matice, závitové tyče, podložky, pánty** | uchytenie, osi doštičiek | nenájdené (železiarstvo) |
@@ -122,10 +124,10 @@ Spájkovačka s cínom, multimeter, kliešte a štípačky, vŕtačka, píla ale
 ## Čo ostáva rozhodnúť
 
 1. Verzia ESP32 (A alebo B).
-2. Snímač zvuku: INMP441 na stĺpe je navrhnutý. Potvrdiť s Ing. Hollým (umiestnenie, pripojenie), overiť testom vo Fáze 1 a rozhodnúť, kto vyrobí stĺp.
+2. Snímač zvuku: INMP441 na stĺpe (návrh Ing. Hollého) overiť testom vo Fáze 1 a rozhodnúť, kto vyrobí stĺp.
 3. Pohon plátu: reťaz (prototyp) alebo remeň GT2 s krokovým motorom.
 4. Typ motora, reťaze a kolies.
-5. Predradný odpor LED optických snímačov (podľa datasheetu).
+5. Predradný odpor LED snímačov LTH-301-05 (začiatočná hodnota ≈ 220 Ω, overiť na stole podľa datasheetu) a poradie vývodov snímača (overiť v datasheete).
 6. Stabilita rámu bez spodných priečok (overiť pri skladaní).
 7. Powerbanka pre stĺpovú jednotku (máme ju? nevypína sa pri malom odbere?).
 8. Dĺžka stĺpa (asi 1,3 m), podstava stĺpa a dĺžka kábla k mikrofónom (asi 0,4 m, overiť testom).
