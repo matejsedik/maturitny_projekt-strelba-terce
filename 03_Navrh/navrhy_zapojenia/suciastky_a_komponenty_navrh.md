@@ -9,7 +9,7 @@ Stav z 18. 11. 2026. Je to **návrh na diskusiu**, nie objednávka. Nič z toho 
 - Odkazy som našiel vyhľadávaním. Pred objednávkou treba skontrolovať, či je tovar skladom a či súčiastka sedí s popisom (označené „overiť“).
 - „nenájdené“ znamená, že konkrétny odkaz som nenašiel. Tam je len typ súčiastky alebo kategória.
 - Obchody: [Techfun](https://techfun.sk) a [rlx.sk](https://rlx.sk) (SK), [LaskaKit](https://www.laskakit.cz/en/), [GM electronic](https://www.gme.cz) a [Hadex](https://www.hadex.cz) (CZ).
-- Veci, ktoré ešte nie sú rozhodnuté (verzia ESP32, snímač zvuku, pohon plátu), sú vedené ako alternatívy.
+- Veci, ktoré ešte nie sú rozhodnuté (verzia ESP32, pohon plátu), sú vedené ako alternatívy. Snímač zvuku je navrhnutý (INMP441 na stĺpe pri strelcovi, bod 2), ale návrh učiteľa ešte treba potvrdiť s Ing. Hollým a overiť testom vo Fáze 1.
 
 ---
 
@@ -22,7 +22,7 @@ Obe alternatívy sa programujú rovnako (rovnaké piny a rovnaký kód). Rozdiel
 | Čo to je | vývojová doska ESP32 s anténou priamo na module | vývojová doska ESP32 s konektorom U.FL, anténu treba pripojiť |
 | Výhoda | najjednoduchšie, nič navyše | dá sa vyviesť anténa nad oceľový štít, ak bude signál slabý |
 | Nevýhoda | oceľový štít môže tlmiť signál (overí sa vo Fáze 1) | treba dokúpiť anténu, bez nej nepoužívať |
-| Počet | 2 (1 + rezerva) | 2 (1 + rezerva) a 2 antény |
+| Počet | 3 (terč, stĺp so snímačom zvuku, rezerva) | 3 (terč, stĺp so snímačom zvuku, rezerva) a antény (stĺp ju pravdepodobne nepotrebuje, overiť) |
 | Odkaz | [ESP32-WROOM-32D vývojová doska (Techfun)](https://techfun.sk/produkt/esp32-wroom-32d-vyvojova-doska-wifi-a-bluetooth/), alternatíva: [ESP32-DevKitC od Espressif (rlx.sk)](https://rlx.sk/en/6604-esp32-devkitc-espressif-powered-by-the-esp32-wroom-32-module.html) | [ESP32-WROOM-32U vývojová doska so socketom pre anténu (Techfun)](https://techfun.sk/produkt/esp32-wroom-32u-vyvojova-doska-so-socketom-pre-antenu/) |
 | Anténa k B | | [mini anténa 3 dB, 2,4 GHz, U.FL (LaskaKit)](https://www.laskakit.cz/en/mini-antena-3db-2-4g-u-fl--ipex--konektor/) alebo [anténa 45×10 mm, 5 dB, U.FL (LaskaKit)](https://www.laskakit.cz/en/wifi-45x10mm-antena-2-4g--5db-u-fl--ipex1--konektor/). Na výber je aj pigtail U.FL → RP-SMA, ak by anténa mala iný konektor. Overiť, že konektor antény je U.FL/IPEX. |
 
@@ -34,18 +34,21 @@ Obe alternatívy sa programujú rovnako (rovnaké piny a rovnaký kód). Rozdiel
 |---|---|---|---|
 | Optický vidlicový snímač **TCST2103** (zásah) | 12 (10 + 2 rezerva) | Vidlica s IR LED a fototranzistorom, štrbina 3,1 mm. Stojí v mieste, kam dopadne hlavička doštičky. Hlavička v štrbine preruší lúč a to je zásah. | [Optická závora TCST2103 (Techfun)](https://techfun.sk/produkt/opticka-zavora-tcst2103/), alternatívy: [GM electronic](https://gme.cz/tcst2103), [TME](https://www.tme.eu/en/details/tcst2103/pcb-photoelectric-sensors/vishay/) |
 | Optický vidlicový snímač **TCST2103** (koncové polohy plátu) | 4 | Rovnaký typ. Označuje hornú a dolnú polohu krycieho plátu, keď výčnelok plátu preruší lúč, motor sa zastaví. | rovnaký odkaz ako vyššie |
-| **Snímač zvuku (výstrel)**: typ zatiaľ nie je vybraný | 1 | Zachytí zvuk výstrelu, prvý výstrel spustí časovač a piaty ho zastaví. Typ, umiestnenie a pripojenie sa dohodnú s učiteľom. Nižšie sú alternatívy na výber. | pozri nižšie |
+| **Mikrofón INMP441** (I2S modul, snímač zvuku výstrelu) | 3 (2 + 1 rezerva) | Digitálny MEMS mikrofón s rozhraním I2S, napájanie 3,3 V. Dva kusy sú na stĺpe pri strelcovi (300 mm pre ľah, 1100 mm pre stoj) a dostanú sa na jednu I2S zbernicu stĺpovej ESP32. Zachytí výstrel, prvý výstrel spustí časovač a piaty ho zastaví. Zvukový otvor je dierka v doske, nesmie sa zakryť. Overiť, či sú k modulu priložené piny (inak treba doletovať). Umiestnenie je návrh učiteľa, ešte treba potvrdiť s Ing. Hollým. | [INMP441 modul I2S mikrofónu (LaskaKit)](https://www.laskakit.cz/en/inmp441-modul-i2s-mikrofonu/) |
+| **Tienený kábel a vodiče k mikrofónom** | asi 2 × 0,4 m + rezerva | Krátke spojenie krabičky s ESP32 s oboma mikrofónmi (SCK, WS, SD, 3V3, GND). Dĺžku a tienenie overiť testom vo Fáze 1. | nenájdené |
+| **Penový kryt (windscreen) na mikrofón** | 2 až 3 | Tlmí vietor a údery tlakovej vlny na mikrofóne. Nesmie zakryť zvukový otvor. | nenájdené |
 
-### Snímač zvuku: alternatívy (nerozhodnuté)
+### Snímač zvuku: prečo INMP441 a čo sme vyradili
 
-| Alternatíva | Čo to je | Odkaz |
-|---|---|---|
-| MAX9814 | mikrofón so zosilňovačom s automatickým nastavením zosilnenia, dobrý pri hlasných zvukoch rôznej sily | [Techfun](https://techfun.sk/produkt/mikrofon-modul-max9814-s-adaptivnym-zoslnovacom/), [LaskaKit](https://www.laskakit.cz/en/max9814-cma-4544pf-w-modul-mikrofonu-s-zesilovacem-max9814/), [rlx.sk](https://rlx.sk/en/speech-recognition/2370-electret-microphone-amplifier-max9814-with-auto-gain-control-adafruit-1713.html) |
-| MAX4466 | mikrofón so zosilňovačom s nastaviteľným zosilnením (trimrom) | [LaskaKit](https://www.laskakit.cz/en/gy-4466-modul-mikrofonu-s-zesilovacem-max4466/) |
-| Digitálny zvukový senzor (typ KY-038) | modul s mikrofónom a komparátorom, prahom nastaviteľným trimrom, dáva signál 0/1 | [LaskaKit](https://www.laskakit.cz/en/arduino-zvukovy-senzor/) |
-| I2S mikrofón (SPH0645) | digitálny mikrofón, ESP32 číta zvuk priamo cez I2S | [LaskaKit](https://www.laskakit.cz/en/gy-sph0645lm4h-modul-i2s-mikrofonu/) |
+| Typ | Čo to je | Stav | Odkaz |
+|---|---|---|---|
+| **INMP441** | digitálny I2S mikrofón, 3,3 V, podľa datasheetu znesie až 120 dB SPL, dva kusy na jednej zbernici (pin L/R určuje kanál) | **navrhnutý** | [LaskaKit](https://www.laskakit.cz/en/inmp441-modul-i2s-mikrofonu/) |
+| MAX9814 | mikrofón so zosilňovačom s automatickým nastavením zosilnenia (AGC) | vyradený: po hlasnom zvuku zníži zosilnenie, takže hlasitosti po sebe idúcich výstrelov nie sú porovnateľné | [Techfun](https://techfun.sk/produkt/mikrofon-modul-max9814-s-adaptivnym-zoslnovacom/), [LaskaKit](https://www.laskakit.cz/en/max9814-cma-4544pf-w-modul-mikrofonu-s-zesilovacem-max9814/), [rlx.sk](https://rlx.sk/en/speech-recognition/2370-electret-microphone-amplifier-max9814-with-auto-gain-control-adafruit-1713.html) |
+| I2S mikrofón SPH0645 | digitálny mikrofón s I2S, drahší ako INMP441 | záloha, ak INMP441 nebude stačiť | [LaskaKit](https://www.laskakit.cz/en/gy-sph0645lm4h-modul-i2s-mikrofonu/) |
+| MAX4466 | analógový mikrofón so zosilňovačom s nastaviteľným zosilnením (trimrom) | iba núdzová záloha (analógový signál na kábli ruší) | [LaskaKit](https://www.laskakit.cz/en/gy-4466-modul-mikrofonu-s-zesilovacem-max4466/) |
+| Digitálny zvukový senzor (typ KY-038) | modul s mikrofónom a komparátorom, prahom nastaviteľným trimrom, dáva signál 0/1 | iba núdzová záloha | [LaskaKit](https://www.laskakit.cz/en/arduino-zvukovy-senzor/) |
 
-Poznámka: či tieto moduly zvládnu hlasitosť výstrelu zo vzduchovky, sa musí overiť testom vo Fáze 1 (overiť). Nižšie je ešte skupina všetkých snímačov zvuku od LaskaKitu: [Sound Sensors](https://www.laskakit.cz/en/sound/).
+Poznámka: či INMP441 zvládne hlasitosť výstrelu zo vzduchovky a či sa výstrel bezpečne rozpozná (5 výstrelov = presne 5 detekcií), sa musí overiť testom vo Fáze 1 (overiť). Skupina všetkých snímačov zvuku od LaskaKitu: [Sound Sensors](https://www.laskakit.cz/en/sound/).
 
 ---
 
@@ -74,6 +77,8 @@ Poznámka: či tieto moduly zvládnu hlasitosť výstrelu zo vzduchovky, sa mus�
 | **Menič step-down B (5 V)** | 2 | Napája ESP32 a optické snímače. | [LM2596 (LaskaKit)](https://www.laskakit.cz/en/step-down-menic-s-lm2596/) alebo rovnaký XL4015 ako vyššie |
 | **Poistka 5 A + držiak** | 1 + sada | Pri skrate preruší obvod. | [Sada sklenených poistiek 5×20 mm (Techfun)](https://techfun.sk/produkt/sada-100-kusov-najpouzivanejsich-poistiek-5x20/), [LaskaKit](https://www.laskakit.cz/en/sada-sklenenych-trubickovych-pojistek-5x20mm-100ks/). Držiak: nenájdené (v Hadexe a GM electronic je viac typov) |
 | **Vypínač** | 1 | Zapína a vypína terč. | nenájdené |
+| **Powerbanka s USB** (stĺpová jednotka) | 1 | Napája ESP32 stĺpovej jednotky cez USB. **Nepotvrdené, či ju máme.** Nesmie sa sama vypínať pri malom odbere prúdu (overiť testom). | nenájdené |
+| **Kábel USB** (stĺpová jednotka) | 1 | Spojí powerbanku s ESP32 v krabičke na stĺpe. | nenájdené |
 
 ---
 
@@ -98,9 +103,10 @@ Poznámka: či tieto moduly zvládnu hlasitosť výstrelu zo vzduchovky, sa mus�
 |---|---|---|
 | **Hliníkový profil HJ25TK2** (25×25×1,5 mm, eloxovaný) | 4 nohy a 4 horné priečky, asi 6,7 m (nákup 7–8 m narezaný na mieru) | [Aluhobby: HJ25TK2](https://www.aluhobby.sk/hlinikovy-profil--hj25tk2-elox/) |
 | **Plastové spojky 253/KJ** (trojcestný roh) | 4 ks, hore v rohoch rámu | rovnaká stránka Aluhobby (typy 251/KJ a 252/KJ sú tiež tam) |
+| **Hliníkový profil HJ25TK2: stĺp pre snímače zvuku** | asi 1,3 m navyše (dĺžku overiť), narezať na mieru spolu s ostatným | [Aluhobby: HJ25TK2](https://www.aluhobby.sk/hlinikovy-profil--hj25tk2-elox/). Na stĺp pridať podstavu (typ a stabilita sa overia skúškou). |
 | **Oceľový plech 2–3 mm** | panely s otvormi, sklápacie doštičky, štít pre elektroniku | nenájdené (objednať narezaný presne na mieru, firmu treba vybrať) |
 | **Plech alebo preglejka pre krycí plát** | krycí plát 456 × 140 mm (v prototype preglejka, finálne plech) | nenájdené |
-| **Filament PETG a PLA** | 3D tlač: držiaky, lišty, krabička, stĺpiky pre snímače | napr. [Prusament PETG 1,75 mm (Alza)](https://www.alza.cz/prusament-petg-1-75mm-urban-grey-1kg-d5714261.htm) |
+| **Filament PETG a PLA** | 3D tlač: držiaky, lišty, krabička, stĺpiky pre snímače, držiaky mikrofónov a krabička na stĺpe | napr. [Prusament PETG 1,75 mm (Alza)](https://www.alza.cz/prusament-petg-1-75mm-urban-grey-1kg-d5714261.htm) |
 | **Gumené tlmiče (silentbloky)** | krabička s elektronikou visí na oceľovom štíte | nenájdené, len kategória: [silentbloky (Essentra)](https://www.essentracomponents.com/sk-sk/s/silentbloky-a-dorazy) |
 | **Skrutky, matice, závitové tyče, podložky, pánty** | uchytenie, osi doštičiek | nenájdené (železiarstvo) |
 | **Vodotesná krabica** pre elektroniku | v dokončenom prototype | nenájdené |
@@ -116,8 +122,10 @@ Spájkovačka s cínom, multimeter, kliešte a štípačky, vŕtačka, píla ale
 ## Čo ostáva rozhodnúť
 
 1. Verzia ESP32 (A alebo B).
-2. Snímač zvuku (typ, umiestnenie a pripojenie dohodnúť s učiteľom).
+2. Snímač zvuku: INMP441 na stĺpe je navrhnutý. Potvrdiť s Ing. Hollým (umiestnenie, pripojenie), overiť testom vo Fáze 1 a rozhodnúť, kto vyrobí stĺp.
 3. Pohon plátu: reťaz (prototyp) alebo remeň GT2 s krokovým motorom.
 4. Typ motora, reťaze a kolies.
 5. Predradný odpor LED optických snímačov (podľa datasheetu).
 6. Stabilita rámu bez spodných priečok (overiť pri skladaní).
+7. Powerbanka pre stĺpovú jednotku (máme ju? nevypína sa pri malom odbere?).
+8. Dĺžka stĺpa (asi 1,3 m), podstava stĺpa a dĺžka kábla k mikrofónom (asi 0,4 m, overiť testom).
