@@ -7,4 +7,4 @@
 - `cast-nazov_vN.stl` – export na 3D tlač,
 - N je číslo verzie, staršie verzie sa nemažú, kým sa nepotvrdí, že nová funguje.
 
-Rozmery sú v dokumente 02_TECHNICKE_RIESENIE, kapitola 2, a v `07_Prilohy_a_odkazy/konstrukcia_nakres.pdf` (opravený nákres: technický pohľad spredu a zboku + 3D ilustrácia).
+Rozmery prototypu (výška 1225 mm, hĺbka 300 mm, šírka 450 mm) sú v dokumente 02_TECHNICKE_RIESENIE, kapitola 2, a v `03_Navrh/navrhy_zapojenia_a_konstrukcie-prototyp/prototyp_konstrukcia_a_rozmery.md`. Nákres prototypu zatiaľ neexistuje. Starší nákres pre predajnú verziu je v `03_Navrh/navrhy_zapojenia_a_konstrukcie-predajna_verzia/konstrukcia_nakres.pdf` (rozmery v ňom pre prototyp neplatia).

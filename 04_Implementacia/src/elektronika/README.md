@@ -6,4 +6,4 @@ Podklady k elektrotechnickým súčiastkam (Sára):
 - kusovníky (zoznam súčiastok a počty),
 - technické listy (datasheety) a parametre súčiastok.
 
-Návrhy zapojenia (terčová jednotka a stĺpová jednotka so snímačom zvuku) sú zatiaľ v `03_Navrh/navrhy_zapojenia/`, čísla pinov v `03_Navrh/tabulka_pinov.xlsx`. Vysvetlenie súčiastok je v Google dokumente Komponenty, ceny v tabuľke 05_KOMPONENTY_A_ROZPOCET.
+Návrhy zapojenia (terčová jednotka a stĺpová jednotka so snímačom zvuku) sú zatiaľ len staršie, v `03_Navrh/navrhy_zapojenia_a_konstrukcie-predajna_verzia/` (vznikli pred rozdelením na prototyp a predajnú verziu; či platia pre prototyp, je nepotvrdené; priečinok pre prototyp je `03_Navrh/navrhy_zapojenia_a_konstrukcie-prototyp/`), čísla pinov v `03_Navrh/tabulka_pinov.xlsx`. Vysvetlenie súčiastok je v Google dokumente Komponenty, ceny v tabuľke 05_KOMPONENTY_A_ROZPOCET.
