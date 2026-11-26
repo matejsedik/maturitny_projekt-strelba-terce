@@ -8,7 +8,7 @@ Tento priečinok je v grafe graphify ignorovaný (súbor `.graphifyignore` v kor
 
 - `konstrukcia_nakres.pdf`: starší nákres konštrukcie (spred konzultácie z 22. 11. 2026).
 - `navrh_zapojenia_00_prehlad.pdf` až `navrh_zapojenia_05_stlp_snimac_zvuku.pdf`: staršie návrhy zapojenia (terč, snímače, servá, krycí plát, napájanie, snímač zvuku).
-- `suciastky_a_komponenty_navrh.md`: starší nákupný prehľad súčiastok a materiálu.
+- `suciastky_a_komponenty_navrh.md`: presunutý 26. 11. 2026 do priečinka prototypu a aktualizovaný.
 
 Súbory sa nemenili, sú to pôvodné návrhy.
 
