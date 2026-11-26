@@ -1,7 +1,7 @@
 #pragma once
 #include <stdint.h>
 
-// Piny terčovej jednotky (ESP32 DevKitC).
+// Piny terčovej jednotky (ESP32-WROOM-32U, vývojová doska; rozloženie pinov overiť po kúpe dosky).
 // Musia zodpovedať tabuľke pinov: 03_Navrh/tabulka_pinov.xlsx (hárok "Terčová jednotka").
 // Zmena sa robí v tabuľke aj tu naraz.
 //

@@ -33,11 +33,19 @@ Prototyp je **súťažná verzia** projektu (AMAVET 2027, prihláška do konca s
 - Pravidlo z konzultácie: **žiadny optický snímač nesmie nikdy smerovať štrbinou kolmo hore**, lebo by do nej mohlo niečo spadnúť a pokazilo by to detekciu.
 - Platí pre všetkých 12 snímačov (10 na zásahy, 2 koncové).
 
+## Elektronika a rozmiestnenie (zmena z 26. 11. 2026)
+
+- Na konštrukcii je **jedno ESP32-WROOM-32U s externou anténou**. Obsluhuje oba rady terčov aj motor krycieho plátu.
+- **Základňa** je druhé ESP32-WROOM-32U s externou anténou, 8 m od konštrukcie (2 m od strelca). Pripájajú sa k nej snímače zvuku a snímače počasia, prijíma údaje z ESP32 na konštrukcii a posiela ich do mobilu trénera. Mobil sa pripája len k základni.
+- Snímače zvuku: 6 ks Keyes KY-037 (2 v prevádzke, 4 náhradné). Snímače počasia: anemometer, snímač smeru vetra a jeden snímač teploty, vlhkosti a tlaku (typy ešte nie sú vybrané).
+- Pôvodný návrh (3 dosky ESP32, 2 mikrofóny INMP441 na stĺpe, mobil s dvoma spojeniami) už neplatí.
+- Typ spojení medzi doskami a s mobilom, dosah ESP32 na 8 m, pravidlá pre anténu 2,4 GHz a stojan základne sú nepotvrdené (overí sa vo Fáze 1).
+
 ## Čo je nepotvrdené alebo chýba
 
 - Nákres prototypu, presné dĺžky profilov, typ profilov a spojok, cena plechu na konštrukciu.
 - Stabilita rámu na štyroch nohách bez spodných priečok (overí sa skúškou, riziko č. 13).
-- Snímač zvuku (umiestnenie a zapojenie nie sú rozhodnuté, preto tu nie sú uvedené).
+- Snímače zvuku na základni (umiestnenie a zapojenie nie sú rozhodnuté, preto tu nie sú uvedené).
 - Či sa niektorý starší návrh zapojenia z priečinka predajnej verzie dá použiť aj pre prototyp.
 
-Zdroje: poznámky z konzultácie s Ing. Hollým (22. 11. 2026), Google dokumenty 01, 02, 05 a Komponenty.
+Zdroje: poznámky z konzultácie s Ing. Hollým (22. 11. 2026), poznámky z 26. 11. 2026, Google dokumenty 01, 02, 05 a Komponenty.
